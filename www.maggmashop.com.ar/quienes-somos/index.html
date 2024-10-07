@@ -13,6 +13,8 @@
 <meta name="description" content="  Este proyecto nace de largas charlas donde idealizábamos acerca de una marca en la cual pudiésemos encontrar outfits según nuestro estilo, con prendas casu..." />
 <link rel="preload" href="../../acdn.mitiendanube.com/stores/001/053/132/themes/idea/style-critical-b42a8300f1184f84d5b2a5263bcc7d53.css" as="style" />
 <link rel="preload" href="../../acdn.mitiendanube.com/stores/001/053/132/themes/idea/style-colors-0cbd494193ec0a960cde053b7228c262.css" as="style" />
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 <meta property="og:site_name" content="Maggma" />
 <meta property="fb:admins" content="109627420426875" />
 <style>
@@ -28,9 +30,48 @@
 :root {
 
     
+    #container {
+            position: relative;
+            width: 100%;
+            max-width: 675px;
+            height: 1001px;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+    }
   
-  
-                        
+    .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/acdn.mitiendanube.com/assets/imagen0.svg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+        .layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 2;
+        }
+        .preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .color-select {
+            margin-top: 20px;
+        }                   
   
       
     
@@ -1094,8 +1135,279 @@ El monto mínimo de compra es de $0 sin incluir el costo de envío
           <!-- Texto -->
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam et voluptatibus mollitia modi...</p>
           <!-- Botón debajo del texto -->
-          <button class="btn btn-primary mt-3">Quiero mi vestido</button>
+          <!-- <button class="btn btn-primary mt-3">Quiero mi vestido</button> -->
         </div>
+
+        <!-- layer  -->
+        <div class="container mt-5">
+            <div id="container">
+                <div class="background"></div>
+                <div class="layer" id="layer1"></div>
+                <div class="layer" id="layer2"></div>
+                <div class="layer" id="layer3"></div>
+            </div>
+    
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab1" data-toggle="tab" href="#tab1-content" role="tab" aria-controls="tab1" aria-selected="true">Tops</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab2" data-toggle="tab" href="#tab2-content" role="tab" aria-controls="tab2" aria-selected="false">Pantalones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tab3" data-toggle="tab" href="#tab3-content" role="tab" aria-labelledby="tab3" aria-selected="false">Accesorios</a>
+                </li>
+            </ul>
+    
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="tab1-content" role="tabpanel" aria-labelledby="tab1">
+                    <div class="options-column">
+                        <label>
+                            <input type="radio" name="radio1" value="tops1" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops1.svg', 'layer1')">
+                            Top1
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops1.svg" class="preview" alt="Tops 1" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops2" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops2.svg', 'layer1')">
+                            Top2
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops2.svg" class="preview" alt="Tops 2" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops3" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops3.svg', 'layer1')">
+                            Top3
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops3.svg" class="preview" alt="Tops 3" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops4.svg', 'layer1')">
+                            Top4
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops4.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops5" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops5.svg', 'layer1')">
+                            Top5
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops5.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops6.svg', 'layer1')">
+                            Top6
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops6.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops7.svg', 'layer1')">
+                            Top7
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops7.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops8.svg', 'layer1')">
+                            Top8
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops8.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops9.svg', 'layer1')">
+                            Top9
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops9.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops10.svg', 'layer1')">
+                            Top10
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops10.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops4" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops11.svg', 'layer1')">
+                            Top11
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops11.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio1" value="tops12" onchange="updateLayer('/acdn.mitiendanube.com/assets/tops12.svg', 'layer1')">
+                            Top12
+                            <div class="preview-container">
+                                <img src="/acdn.mitiendanube.com/assets/tops12.svg" class="preview" alt="Tops 4" height="150">
+                            </div>
+                        </label>
+                        
+                    </div>
+                    <div class="color-select">
+                        <label for="color-select-tab1">Seleccionar color:</label>
+                        <select id="color-select-tab1" onchange="changeColor(this, 'layer1')">
+                            <option value="#FFFFFF">Blanco</option>
+                            <option value="#000000">Negro</option>
+                            <option value="#FF0000">Rojo</option>
+                            <option value="#00FF00">Verde</option>
+                            <option value="#0000FF">Azul</option>
+                            <option value="#d7d3d3">Gris</option>
+             
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="tab-pane fade" id="tab2-content" role="tabpanel" aria-labelledby="tab2">
+                    <div class="options-column">
+                        <label>
+                            <input type="radio" name="radio2" value="pantalon1" onchange="updateLayer('pantalon1.svg', 'layer2')">
+                            Pantalon 1
+                            <div class="preview-container">
+                                <img src="pantalon1.svg" class="preview" alt="Tops 5" width="80">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio2" value="pantalon2" onchange="updateLayer('pantalon2.svg', 'layer2')">
+                            Pantalon 2
+                            <div class="preview-container">
+                                <img src="pantalon2.svg" class="preview" alt="Tops 6" width="80">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio2" value="pantalon3" onchange="updateLayer('pantalon3.svg', 'layer2')">
+                            Pantalon 3
+                            <div class="preview-container">
+                                <img src="pantalon3.svg" class="preview" alt="Tops 7" width="80">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio2" value="pantalon4" onchange="updateLayer('pantalon4.svg', 'layer2')">
+                            Pantalon 4
+                            <div class="preview-container">
+                                <img src="pantalon4.svg" class="preview" alt="Tops 8" width="80">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="color-select">
+                        <label for="color-select-tab2">Seleccionar color:</label>
+                        <select id="color-select-tab2" onchange="changeColor(this, 'layer2')">
+                            <option value="#FFFFFF">Blanco</option>
+                            <option value="#000000">Negro</option>
+                            <option value="#FF0000">Rojo</option>
+                            <option value="#00FF00">Verde</option>
+                            <option value="#0000FF">Azul</option>
+                            <option value="#d7d3d3">Gris</option>
+    
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="tab-pane fade" id="tab3-content" role="tabpanel" aria-labelledby="tab3">
+                    <div class="options-column">
+                        <label>
+                            <input type="radio" name="radio3" value="tops9" onchange="updateLayer('tops.svg', 'layer3')">
+                            Opción 3-1
+                            <div class="preview-container">
+                                <img src="tops9.svg" class="preview" alt="Tops 9" width="80">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio3" value="tops10" onchange="updateLayer('tops.svg', 'layer3')">
+                            Opción 3-2
+                            <div class="preview-container">
+                                <img src="tops10.svg" class="preview" alt="Tops 10" width="80">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio3" value="tops11" onchange="updateLayer('tops.svg', 'layer3')">
+                            Opción 3-3
+                            <div class="preview-container">
+                                <img src="tops11.svg" class="preview" alt="Tops 11" width="80">
+                            </div>
+                        </label>
+                        <label>
+                            <input type="radio" name="radio3" value="tops12" onchange="updateLayer('tops.svg', 'layer3')">
+                            Opción 3-4
+                            <div class="preview-container">
+                                <img src="tops12.svg" class="preview" alt="Tops 12" width="80">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="color-select">
+                        <label for="color-select-tab3">Seleccionar color:</label>
+                        <select id="color-select-tab3" onchange="changeColor(this, 'layer3')">
+                            <option value="#FFFFFF">Blanco</option>
+                            <option value="#000000">Negro</option>
+                            <option value="#FF0000">Rojo</option>
+                            <option value="#00FF00">Verde</option>
+                            <option value="#0000FF">Azul</option>
+                            <option value="#d7d3d3">Gris</option>
+    
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const selectedLayers = {
+                layer1: null,
+                layer2: null,
+                layer3: null,
+            };
+    
+            function updateLayer(value, layerId) {
+                const layerIndex = layerId.replace('layer', '') - 1;
+                const layers = document.querySelectorAll('.layer');
+    
+                // Mostrar todas las capas seleccionadas
+                layers.forEach((layer, index) => {
+                    layer.style.display = index === layerIndex || selectedLayers[`layer${index + 1}`] ? 'block' : 'none';
+                });
+    
+                selectedLayers[layerId] = layerId; // Guarda la capa seleccionada
+                const layer = document.getElementById(layerId);
+    
+                fetch(value)
+                    .then(response => response.text())
+                    .then(data => {
+                        layer.innerHTML = data;
+    
+                        // Centrar el SVG
+                        const img = new Image();
+                        img.src = value;
+                        img.onload = function() {
+                            const svgWidth = img.width;
+                            const container = document.getElementById('container');
+                            const containerWidth = container.clientWidth;
+    
+                            // Calcular la posición para centrar el SVG
+                            const leftPosition = (containerWidth - svgWidth) / 2;
+                            layer.style.left = `${leftPosition}px`; // Ajustar la posición
+                        };
+                    })
+                    .catch(error => console.error('Error al cargar el SVG:', error));
+            }
+    
+            function changeColor(select, layerId) {
+                const selectedColor = select.value;
+                const layer = document.getElementById(layerId);
+                const paths = layer.querySelectorAll('path');
+    
+                paths.forEach(path => {
+                    path.style.fill = selectedColor;
+                });
+            }
+        </script>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
         <!-- <div class="col-md-6">
           <div class="slider">
